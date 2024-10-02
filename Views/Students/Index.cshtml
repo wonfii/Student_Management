@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Groups";
+}
+
+@model List<data_access.Entities.Group>;
+
+<h1 m-5>Choose your group</h1>
+
+@if (Model.Any())
+{
+    <p class="fw-normal m-3">@Model.Count groups exists.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-4 ms-3 mt-4">
+        @foreach (var group in Model)
+        {
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">@group.Name</h4>
+                        <h5 class="card-title">Study Year: @group.StudyYear</h5>
+                        <p class="card-text"> There are @group.Students.Count students in this group.</p>
+                        <a asp-action="GroupDetails" asp-route-id="@group.Id" class="btn btn-dark">Show details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+
+   
+}
+else
+{
+    <p>Zero cars are avaliable.</p>
+}

@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Group Details";
+}
+
+@model data_access.Entities.Group
+
+<h1>@Model.Name - Student list</h1>
+
+<p>Study Year: @Model.StudyYear</p>
+
+<h3>Students in this group:</h3>
+
+@if (Model.Students.Any())
+{
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Average Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Students)
+                {
+                    <tr>
+                        <th scope="row">@student.Id</th>
+                        <td colspan="1">@student.FullName</td>
+                        <td>@student.AverageGrade</td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+    </div>
+
+}
+else
+{
+    <p>No students in this group.</p>
+}
