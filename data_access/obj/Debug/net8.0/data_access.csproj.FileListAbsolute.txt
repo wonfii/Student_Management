@@ -26,3 +26,4 @@ C:\шаг\C#\asp.net\data_access\obj\Debug\net8.0\refint\data_access.dll
 C:\шаг\C#\asp.net\data_access\obj\Debug\net8.0\data_access.pdb
 C:\шаг\C#\asp.net\data_access\obj\Debug\net8.0\data_access.genruntimeconfig.cache
 C:\шаг\C#\asp.net\data_access\obj\Debug\net8.0\ref\data_access.dll
+C:\шаг\C#\asp.net\data_access\obj\Debug\net8.0\data_access.sourcelink.json

@@ -1,5 +1,4 @@
 ﻿using data_access.Entities;
-using data_access.Helpers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,19 +13,8 @@ namespace data_access
         public DbSet<Student> Students { get; set; }
         public DbSet<Group> Groups { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;
-                                            Initial Catalog=StudentDb;
-                                            Integrated Security=True;
-                                            Connect Timeout=30;
-                                            Encrypt=False;
-                                            Trust Server Certificate=False;
-                                            Application Intent=ReadWrite;
-                                            Multi Subnet Failover=False");
-        }
+        public StudentDbContext() : base() { }
+        public StudentDbContext(DbContextOptions options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

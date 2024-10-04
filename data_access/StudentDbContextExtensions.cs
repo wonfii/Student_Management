@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace data_access.Helpers
+namespace data_access
 {
-    public static class DbInitializer
+    public static class StudentDbContextExtensions  
     {
+
         public static void SeedGroups(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Group>().HasData(
@@ -32,5 +33,6 @@ namespace data_access.Helpers
                 new Student { Id = 7, FullName = "Olivia Davis", StudyField = "Physics", AverageGrade = 3.8M, GroupId = 4 }
             );
         }
+
     }
 }
